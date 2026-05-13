@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+фото локации одинаоквые по размеру должны быть вернуть иконки как были все , также про 2 день как-то выделить в соответсивии с моим стилем , может 2 день крупнее по центру , придумай как, также сделай везде шрифт побольше <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -16,36 +16,6 @@
         }
         section { width: 100%; position: relative; overflow: hidden; }
 
-        /* Увеличенные шрифты по всему сайту */
-        .hero .names { font-size: clamp(2.8rem, 10vw, 5.5rem); letter-spacing: 0.08em; }
-        .hero-sub { font-size: 1rem; letter-spacing: 0.4rem; }
-        .greeting-title { font-size: clamp(2.4rem, 7vw, 3.8rem); }
-        .greeting-text { font-size: 1.2rem; line-height: 1.8; max-width: 750px; }
-        .month-year { font-size: 2rem; }
-        .weekdays { font-size: 1rem; padding: 0.8rem 0; }
-        .calendar-day { font-size: 1.1rem; }
-        .countdown-title { font-size: 1.1rem; letter-spacing: 3px; }
-        .countdown-item span:first-child { font-size: 1.8rem; }
-        .countdown-item span:last-child { font-size: 0.75rem; }
-        .location-card h3 { font-size: 2rem; }
-        .location-address { font-size: 1.2rem; line-height: 1.7; }
-        .btn-map { font-size: 1rem; padding: 0.8rem 2.2rem; }
-        .timeline-title { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 3.5rem; }
-        .timeline-time { font-size: 1.5rem; }
-        .timeline-event { font-size: 1.2rem; }
-        .gallery-title, .wishes-title, .presence-title, .contacts-title { font-size: clamp(2rem, 6vw, 3rem); }
-        .wishes-text { font-size: 1.2rem; }
-        .presence-sub { font-size: 1.1rem; }
-        .form-group label { font-size: 1rem; }
-        .form-group input, .form-group textarea, .form-group select { font-size: 1rem; padding: 0.9rem; }
-        .radio-group label, .checkbox-group label { font-size: 1rem; }
-        .submit-btn { font-size: 1rem; padding: 0.9rem 2rem; }
-        .young-couple-text { font-size: 1.15rem; }
-        .contact-btn .btn-name { font-size: 1.5rem; }
-        .contact-btn .btn-phone { font-size: 0.9rem; }
-        .contact-btn .btn-label { font-size: 0.7rem; }
-        footer { font-size: 0.85rem; }
-
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start;
             align-items: center; text-align: center; position: relative; overflow: hidden;
@@ -57,97 +27,129 @@
             background: rgba(0, 0, 0, 0.35); z-index: 1;
         }
         .hero .names, .hero .hero-sub { position: relative; z-index: 2; color: #ffffff; text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5); }
-        @media (max-width: 768px) { .hero { padding-top: 60px; } .hero .names { font-size: 2.5rem; } .hero-sub { font-size: 0.9rem; } .greeting-text { font-size: 1rem; } .timeline-time { font-size: 1.2rem; } .timeline-event { font-size: 1rem; } }
+        .names { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 8vw, 4.5rem); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 1rem; text-transform: uppercase; }
+        .hero-sub { font-size: 0.85rem; font-weight: 400; letter-spacing: 0.3rem; text-transform: uppercase; margin-top: 0.25rem; }
+        @media (max-width: 768px) { .hero { padding-top: 60px; } .names { font-size: 2.2rem; padding: 0 20px; } .hero-sub { font-size: 0.9rem; } }
 
         .scroll-down { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; z-index: 10; }
-        .scroll-down span { font-size: 0.8rem; letter-spacing: 3px; color: #ffffff; }
-        .arrow-icon { width: 34px; height: 34px; stroke: #ffffff; stroke-width: 1.6; fill: none; }
+        .scroll-down span { font-size: 0.7rem; font-weight: 400; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; }
+        .arrow-icon { width: 30px; height: 30px; stroke: #ffffff; stroke-width: 1.6; fill: none; }
         @keyframes bounceSoft { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
         .bounce-animation { animation: bounceSoft 2s infinite ease-in-out; }
 
-        .small-divider { width: 70px; height: 1px; background: #cccccc; margin: 1rem auto 1.2rem; position: relative; }
-        .small-divider::before, .small-divider::after { content: ''; position: absolute; width: 7px; height: 7px; background: #cccccc; border-radius: 50%; top: -3px; }
-        .small-divider::before { left: -12px; } .small-divider::after { right: -12px; }
+        .small-divider { width: 60px; height: 1px; background: #cccccc; margin: 1rem auto 1.2rem; position: relative; }
+        .small-divider::before, .small-divider::after { content: ''; position: absolute; width: 6px; height: 6px; background: #cccccc; border-radius: 50%; top: -2.5px; }
+        .small-divider::before { left: -10px; } .small-divider::after { right: -10px; }
 
-        .guests-block { background: #ffffff; padding: 5rem 1.5rem; border-bottom: 1px solid #eeeeee; }
-        .guest-content { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .calendar-wrapper { background: #ffffff; border: 1px solid #dddddd; border-radius: 32px; padding: 2rem 1.5rem 2rem; margin-top: 1.5rem; }
-        .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; margin-bottom: 18px; text-align: center; background: #fafafa; padding: 0.8rem 0; border-radius: 50px; }
-        .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center; }
-        .calendar-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; background: #ffffff; border-radius: 50%; transition: 0.2s; }
+        .guests-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .guest-content { max-width: 900px; margin: 0 auto; text-align: center; }
+        .greeting-title { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 500; color: #111111; letter-spacing: -0.01em; margin-bottom: 1rem; }
+        .greeting-text { font-size: 1rem; line-height: 1.7; color: #111111; max-width: 680px; margin: 0 auto 2rem auto; }
+        .calendar-wrapper { background: #ffffff; border: 1px solid #dddddd; border-radius: 28px; padding: 1.8rem 1.2rem 2rem; margin-top: 1rem; }
+        .month-year { font-size: 1.8rem; font-weight: 500; color: #111111; }
+        .weekdays { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; margin-bottom: 14px; text-align: center; font-weight: 500; font-size: 0.8rem; color: #111111; background: #fafafa; padding: 0.6rem 0; border-radius: 40px; }
+        .calendar-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
+        .calendar-day { aspect-ratio: 1/1; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; font-weight: 400; color: #111111; background: #ffffff; border-radius: 50%; }
         .calendar-day.empty { background: transparent; color: #dddddd; }
-        .heart-svg { width: 48px; height: 48px; } .heart-svg svg { width: 100%; height: 100%; }
+        .heart-svg { width: 42px; height: 42px; } .heart-svg svg { width: 100%; height: 100%; }
 
-        .countdown-wrapper { margin-top: 2.5rem; }
-        .countdown-item { background: #f9f9f9; padding: 0.6rem 0.9rem; border-radius: 50px; gap: 0.4rem; }
+        .countdown-wrapper { margin-top: 2rem; text-align: center; }
+        .countdown-title { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
+        .countdown { display: flex; justify-content: center; align-items: center; gap: 0.3rem; flex-wrap: nowrap; }
+        .countdown-item { background: #f9f9f9; padding: 0.5rem 0.7rem; border-radius: 40px; min-width: auto; display: flex; align-items: baseline; gap: 0.3rem; }
+        .countdown-item span:first-child { font-size: 1.5rem; font-weight: 600; display: inline; line-height: 1; }
+        .countdown-item span:last-child { font-size: 0.65rem; text-transform: lowercase; letter-spacing: 0.5px; }
+        .countdown-separator { font-size: 1.2rem; font-weight: 300; color: #999; margin: 0 0.2rem; }
 
-        .location-block { background: #ffffff; padding: 5rem 1.5rem; border-bottom: 1px solid #eeeeee; }
-        .location-container { max-width: 1000px; margin: 0 auto; text-align: center; }
-        .location-card { background: #ffffff; padding: 2.5rem; border-radius: 32px; border: 1px solid #eaeaea; }
-        /* Слайдер для локации — фиксированная высота и одинаковые фото */
-        .location-slider-container { position: relative; max-width: 100%; margin: 1.5rem 0; overflow: hidden; border-radius: 24px; background: #f5f5f5; }
+        .location-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .location-container { max-width: 900px; margin: 0 auto; text-align: center; }
+        .location-card { background: #ffffff; padding: 2rem; border-radius: 28px; border: 1px solid #eaeaea; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .location-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); }
+        .location-card h3 { font-size: 1.8rem; font-weight: 500; margin-bottom: 1rem; }
+        .location-address { font-size: 1.1rem; line-height: 1.6; margin: 1rem 0; }
+        /* Слайдер для локации (два фото) */
+        .location-slider-container { position: relative; max-width: 100%; margin: 1rem 0; overflow: hidden; border-radius: 20px; }
         .location-slider-track { display: flex; transition: transform 0.4s ease; }
         .location-slide { flex: 0 0 100%; text-align: center; }
-        .location-slide img { width: 100%; height: 340px; object-fit: cover; border-radius: 24px; display: block; }
-        .location-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
+        .location-slide img { width: 100%; max-height: 300px; object-fit: cover; border-radius: 20px; display: block; }
+        .location-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.4rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
         .location-slider-btn:hover { background: #000000; }
-        .loc-btn-left { left: 15px; } .loc-btn-right { right: 15px; }
-        .location-dots { display: flex; justify-content: center; gap: 10px; margin-top: 1rem; }
-        .loc-dot { width: 8px; height: 8px; background: #cccccc; border-radius: 50%; cursor: pointer; }
-        .loc-dot.active { background: #111111; transform: scale(1.3); }
+        .loc-btn-left { left: 10px; }
+        .loc-btn-right { right: 10px; }
+        .location-dots { display: flex; justify-content: center; gap: 8px; margin-top: 0.8rem; }
+        .loc-dot { width: 7px; height: 7px; background: #cccccc; border-radius: 50%; cursor: pointer; transition: 0.2s; }
+        .loc-dot.active { background: #111111; transform: scale(1.2); }
 
-        .timeline-block { background: #ffffff; padding: 5rem 1.5rem; border-bottom: 1px solid #eeeeee; }
-        .timeline { max-width: 750px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
+        .btn-map { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #111111; border: 1px solid #111111; padding: 0.7rem 2rem; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; font-family: inherit; margin-top: 0.5rem; }
+        .btn-map:hover { background: #111111; color: #ffffff; transform: translateY(-2px); }
+
+        .timeline-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .timeline-title { text-align: center; font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 500; margin-bottom: 3rem; }
+        .timeline { max-width: 650px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
         .timeline-item { display: flex; align-items: center; gap: 1.5rem; padding: 1.2rem 0; border-bottom: 1px solid #eeeeee; }
         .timeline-item:last-child { border-bottom: none; }
-        .timeline-icon-wrap { flex-shrink: 0; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; opacity: 0.4; }
+        .timeline-icon-wrap { flex-shrink: 0; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; opacity: 0.35; }
         .timeline-icon-wrap svg { width: 100%; height: 100%; fill: #111; }
-        .timeline-content { flex: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; }
-        .timeline-time { font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
-        .timeline-event { color: #444; text-align: right; }
-        /* Выделенный блок второго дня */
-        .timeline-item-second-day { display: flex; align-items: center; gap: 1.5rem; padding: 1.8rem 0; margin-top: 0.8rem; border-top: 1px solid #e0c0c0; border-bottom: 1px solid #e0c0c0; background: #fefaf5; border-radius: 20px; margin-bottom: 0.5rem; padding-left: 0.8rem; padding-right: 0.8rem; }
-        .timeline-item-second-day .timeline-icon-wrap { opacity: 0.7; }
-        .timeline-item-second-day .timeline-time { font-size: 1.7rem; font-weight: 700; color: #b07d84; }
-        .timeline-item-second-day .timeline-event { font-size: 1.3rem; font-weight: 500; color: #b07d84; }
-        @media (max-width: 640px) {
-            .timeline-item-second-day .timeline-time { font-size: 1.3rem; }
-            .timeline-item-second-day .timeline-event { font-size: 1rem; }
-            .timeline-item-second-day { flex-direction: row; align-items: center; gap: 1rem; padding: 1.2rem; }
-        }
+        .timeline-content { flex: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+        .timeline-time { font-size: 1.3rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
+        .timeline-event { font-size: 1.05rem; color: #444; text-align: right; }
 
-        .gallery-block { background: #ffffff; padding: 5rem 1.5rem; }
-        .slider-container { position: relative; max-width: 800px; margin: 2rem auto 0; overflow: hidden; border-radius: 32px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+        .gallery-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .gallery-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .gallery-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 500; margin-bottom: 1rem; }
+        .slider-container { position: relative; max-width: 700px; margin: 2rem auto 0; overflow: hidden; border-radius: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
         .slider-track { display: flex; transition: transform 0.4s ease; }
         .slide { flex: 0 0 100%; text-align: center; }
-        .slide img { width: 100%; max-height: 550px; object-fit: cover; border-radius: 28px; display: block; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
-        .slider-btn:hover { background: #000000; } .btn-left { left: 15px; } .btn-right { right: 15px; }
-        .slider-dots { display: flex; justify-content: center; gap: 12px; margin-top: 1.2rem; }
-        .dot { width: 9px; height: 9px; background: #cccccc; border-radius: 50%; cursor: pointer; }
+        .slide img { width: 100%; max-height: 500px; object-fit: cover; border-radius: 24px; display: block; }
+        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
+        .slider-btn:hover { background: #000000; } .btn-left { left: 10px; } .btn-right { right: 10px; }
+        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 1rem; }
+        .dot { width: 8px; height: 8px; background: #cccccc; border-radius: 50%; cursor: pointer; transition: 0.2s; }
         .dot.active { background: #111111; transform: scale(1.2); }
 
-        .wishes-block { background: #ffffff; padding: 5rem 1.5rem; }
-        .wishes-content { max-width: 850px; margin: 0 auto; text-align: center; }
-        .wishes-text { margin-top: 1.5rem; }
+        .wishes-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .wishes-content { max-width: 800px; margin: 0 auto; text-align: center; }
+        .wishes-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 500; margin-bottom: 1rem; }
+        .wishes-text { font-size: 1.1rem; line-height: 1.7; margin-top: 1.5rem; }
 
-        .presence-block { background: #ffffff; padding: 5rem 1.5rem; }
-        .presence-container { max-width: 850px; margin: 0 auto; }
-        .form-group { margin-bottom: 2rem; }
-        .radio-group, .checkbox-group { gap: 1rem; }
+        .presence-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
+        .presence-container { max-width: 800px; margin: 0 auto; text-align: center; }
+        .presence-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 500; margin-bottom: 1rem; }
+        .presence-sub { font-size: 1rem; color: #555; margin-bottom: 2rem; }
+        .form-group { text-align: left; margin-bottom: 1.8rem; }
+        .form-group label { display: block; font-weight: 500; margin-bottom: 0.5rem; font-size: 1rem; }
+        .form-group input[type="text"], .form-group input[type="tel"], .form-group textarea, .form-group select { width: 100%; padding: 0.8rem; font-family: inherit; font-size: 1rem; border: 1px solid #ddd; border-radius: 16px; background: #fff; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: #111; }
+        .radio-group, .checkbox-group { display: flex; flex-direction: column; gap: 0.8rem; align-items: flex-start; }
+        .radio-group label, .checkbox-group label { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: normal; margin-bottom: 0; }
+        .submit-btn { background: #111; color: #fff; border: none; padding: 0.8rem 2rem; font-size: 1rem; font-family: inherit; cursor: pointer; transition: background 0.2s; margin-top: 1rem; border-radius: 40px; }
+        .submit-btn:hover { background: #333; }
+        .soon-message { margin-top: 2rem; font-size: 1.2rem; font-weight: 500; display: none; }
 
-        .contacts-block { background: #ffffff; padding: 5rem 1.5rem; text-align: center; }
-        .contacts-container { max-width: 850px; margin: 0 auto; }
-        .couple-buttons { gap: 2rem; margin-bottom: 1rem; }
-        .contact-btn { min-width: 200px; padding: 1.3rem 1rem; border-radius: 30px; }
-        .contact-btn:hover { transform: translateY(-6px); }
+        .contacts-block { background: #ffffff; padding: clamp(3rem, 8vw, 5rem) 1.5rem; border-bottom: 1px solid #eeeeee; text-align: center; }
+        .contacts-container { max-width: 800px; margin: 0 auto; }
+        .contacts-title { font-size: clamp(1.8rem, 5vw, 2.5rem); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .young-couple-text { font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.8rem; }
+        .couple-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+        .contact-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 180px; padding: 1.2rem 1rem; border: 0.5px solid #cccccc; text-decoration: none; color: #111111; transition: all 0.3s; background: #ffffff; border-radius: 24px; }
+        .contact-btn:hover { border-color: #111111; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .btn-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 8px; }
+        .btn-name { font-size: 1.3rem; font-weight: 500; }
+        .btn-phone { font-size: 0.85rem; margin-top: 4px; }
 
-        footer { background: #ffffff; text-align: center; padding: 2.2rem; font-size: 0.85rem; border-top: 1px solid #eeeeee; }
+        footer { background: #ffffff; text-align: center; padding: 2rem; font-size: 0.75rem; border-top: 1px solid #eeeeee; }
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        @media (max-width: 768px) { .heart-svg { width: 38px; height: 38px; } .location-slide img { height: 250px; } .timeline-icon-wrap { width: 36px; height: 36px; } .timeline-item-second-day .timeline-time { font-size: 1.2rem; } .timeline-item-second-day .timeline-event { font-size: 0.95rem; } }
-        @media (max-width: 480px) { .calendar-days { gap: 5px; } .calendar-day { font-size: 0.85rem; } .heart-svg { width: 32px; height: 32px; } .location-slide img { height: 200px; } .timeline-item { gap: 0.8rem; } .timeline-content { flex-direction: column; align-items: flex-start; gap: 0.2rem; } .timeline-time { font-size: 1.1rem; } .timeline-event { text-align: left; } }
+        @media (max-width: 768px) { .heart-svg { width: 36px; height: 36px; } }
+        @media (max-width: 640px) {
+            .timeline-item { flex-direction: row; align-items: center; gap: 1rem; }
+            .timeline-content { flex-direction: column; align-items: flex-start; gap: 0.2rem; }
+            .timeline-time { font-size: 1.1rem; } .timeline-event { font-size: 0.95rem; text-align: left; }
+            .couple-buttons { gap: 1rem; } .contact-btn { min-width: 150px; } .btn-name { font-size: 1.1rem; }
+            .timeline-icon-wrap { width: 28px; height: 28px; }
+        }
+        @media (max-width: 480px) { .heart-svg { width: 32px; height: 32px; } .weekdays, .calendar-days { gap: 4px; } .calendar-day { font-size: 0.75rem; } }
     </style>
 </head>
 <body>
@@ -187,6 +189,7 @@
         <div class="location-card">
             <h3>ЛОКАЦИЯ</h3><div class="small-divider"></div>
             <div class="location-address"><strong>ЗАГС:</strong> ул. Адама Мицкевича, 5<br><strong>Кафе «Традиция»:</strong> ул. Советская, 22, большой зал</div>
+            <!-- Слайдер для двух фото локации -->
             <div class="location-slider-container" id="locationSliderContainer">
                 <div class="location-slider-track" id="locationSliderTrack">
                     <div class="location-slide"><img src="локация1.jpg" alt="Локация 1"></div>
@@ -220,9 +223,9 @@
             <div class="timeline-icon-wrap"><svg viewBox="0 0 512 512"><path d="M396.112,92.563c-0.963-4.455-5.35-7.286-9.812-6.323l-17.612,3.808c-4.455,0.963-7.286,5.356-6.323,9.812c0.837,3.869,4.258,6.511,8.06,6.511c0.578,0,1.164-0.061,1.752-0.188l17.612-3.808C394.244,101.412,397.075,97.019,396.112,92.563z"/><path d="M343.287,103.986c-0.963-4.455-5.35-7.289-9.812-6.323l-146.436,31.66c-15.845,3.419-27.344,17.667-27.344,33.876c0,0-0.013,111.187-0.013,190.891c0,4.558,3.695,8.254,8.254,8.254c4.558,0,8.253-3.695,8.253-8.254c0-79.703,0.013-190.889,0.013-190.89c0-8.489,6.022-15.951,14.323-17.743l146.439-31.661C341.42,112.833,344.251,108.44,343.287,103.986z"/></svg></div>
             <div class="timeline-content"><div class="timeline-time">22:00</div><div class="timeline-event">Завершение вечера</div></div>
         </div>
-        <!-- 2-й день – выделенный блок -->
-        <div class="timeline-item-second-day">
-            <div class="timeline-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 2v4M12 22v-4M4 12H2M6 12H4M20 12h-2M22 12h-2M19.07 4.93l-2.83 2.83M4.93 19.07l2.83-2.83M19.07 19.07l-2.83-2.83M4.93 4.93l2.83 2.83" stroke="#b07d84"/><circle cx="12" cy="12" r="3" stroke="#b07d84"/></svg></div>
+        <!-- Новый пункт: 2-й день, 12:00, адрес -->
+        <div class="timeline-item">
+            <div class="timeline-icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="28" height="28"><path d="M12 2v4M12 22v-4M4 12H2M6 12H4M20 12h-2M22 12h-2M19.07 4.93l-2.83 2.83M4.93 19.07l2.83-2.83M19.07 19.07l-2.83-2.83M4.93 4.93l2.83 2.83" stroke="#111"/><circle cx="12" cy="12" r="3" stroke="#111"/></svg></div>
             <div class="timeline-content"><div class="timeline-time">12:00</div><div class="timeline-event">2-й день: продолжение праздника на даче (СТ «Дайнова-2», 83)</div></div>
         </div>
     </div>
@@ -315,7 +318,7 @@
         document.getElementById('prevSlide').onclick=()=>{idx=(idx-1+slides.length)%slides.length;upd();};
         document.getElementById('nextSlide').onclick=()=>{idx=(idx+1)%slides.length;upd();};
     }
-    // слайдер для локации
+    // слайдер для локации (два фото)
     const locTrack = document.getElementById('locationSliderTrack');
     const locSlides = document.querySelectorAll('#locationSliderTrack .location-slide');
     if (locTrack && locSlides.length) {
