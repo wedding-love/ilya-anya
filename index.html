@@ -68,16 +68,8 @@
         .location-card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.05); }
         .location-card h3 { font-size: 2rem; font-weight: 500; margin-bottom: 1rem; }
         .location-address { font-size: 1.2rem; line-height: 1.6; margin: 1rem 0; }
-        .location-slider-container { position: relative; max-width: 100%; margin: 1.5rem 0; overflow: hidden; border-radius: 20px; aspect-ratio: 4 / 3; background: #f5f5f5; }
-        .location-slider-track { display: flex; transition: transform 0.4s ease; height: 100%; }
-        .location-slide { flex: 0 0 100%; text-align: center; height: 100%; }
-        .location-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block; }
-        .location-slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.6rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
-        .location-slider-btn:hover { background: #000000; }
-        .loc-btn-left { left: 12px; } .loc-btn-right { right: 12px; }
-        .location-dots { display: flex; justify-content: center; gap: 8px; margin-top: 0.8rem; }
-        .loc-dot { width: 7px; height: 7px; background: #cccccc; border-radius: 50%; cursor: pointer; transition: 0.2s; }
-        .loc-dot.active { background: #111111; transform: scale(1.2); }
+        .location-single-image { margin: 1.5rem 0; border-radius: 20px; overflow: hidden; }
+        .location-single-image img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 4 / 3; }
 
         .btn-map { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #111111; border: 1px solid #111111; padding: 0.8rem 2.2rem; font-size: 1rem; text-decoration: none; transition: all 0.2s; font-family: inherit; margin-top: 0.5rem; }
         .btn-map:hover { background: #111111; color: #ffffff; transform: translateY(-2px); }
@@ -144,19 +136,6 @@
             margin: 0.8rem auto;
         }
 
-        .gallery-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
-        .gallery-container { max-width: 800px; margin: 0 auto; text-align: center; }
-        .gallery-title { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 500; margin-bottom: 1rem; }
-        .slider-container { position: relative; max-width: 700px; margin: 2rem auto 0; overflow: hidden; border-radius: 28px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-        .slider-track { display: flex; transition: transform 0.4s ease; }
-        .slide { flex: 0 0 100%; text-align: center; }
-        .slide img { width: 100%; max-height: 500px; object-fit: cover; border-radius: 24px; display: block; }
-        .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.7rem; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
-        .slider-btn:hover { background: #000000; } .btn-left { left: 12px; } .btn-right { right: 12px; }
-        .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 1rem; }
-        .dot { width: 8px; height: 8px; background: #cccccc; border-radius: 50%; cursor: pointer; transition: 0.2s; }
-        .dot.active { background: #111111; transform: scale(1.2); }
-
         .wishes-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
         .wishes-content { max-width: 800px; margin: 0 auto; text-align: center; }
         .wishes-title { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 500; margin-bottom: 1rem; }
@@ -191,9 +170,9 @@
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
-        /* ========== НОВЫЕ СТИЛИ ДЛЯ МАЛЕНЬКИХ ЭЛЕМЕНТОВ ТАЙМИНГА, СОГЛАСОВАННЫХ СО ШРИФТОМ ========== */
+        /* Стили для иконок тайминга */
         .timeline-icon-wrap {
-            width: 1.2rem;    /* вместо 28px -> ~19px, как размер шрифта */
+            width: 1.2rem;
             height: 1.2rem;
             opacity: 0.5;
         }
@@ -203,13 +182,12 @@
             fill: #111;
             stroke: none;
         }
-        /* уменьшаем отступы и промежутки, сохраняя читаемость */
         .timeline-item {
             gap: 0.9rem;
             padding: 0.85rem 0;
         }
         .timeline-time {
-            font-size: 1.25rem;   /* близко к размеру шрифта абзаца, но чуть выразительнее */
+            font-size: 1.25rem;
             font-weight: 600;
             letter-spacing: 0.01em;
         }
@@ -217,7 +195,6 @@
             font-size: 1.05rem;
             line-height: 1.4;
         }
-        /* второй день — сохраняем ту же стилистику */
         .second-day-highlight .timeline-time {
             font-size: 1.25rem;
         }
@@ -227,7 +204,6 @@
         .second-day-highlight {
             padding: 1rem 1rem;
         }
-        /* мобильная версия: иконки и текст ещё изящнее */
         @media (max-width: 640px) {
             .timeline-icon-wrap {
                 width: 1rem;
@@ -253,7 +229,6 @@
                 font-size: 0.95rem;
             }
         }
-        /* дополнительная гармония для иконок без изменения самой формы */
         .timeline-icon-wrap svg path,
         .timeline-icon-wrap svg circle,
         .timeline-icon-wrap svg g {
@@ -298,15 +273,9 @@
         <div class="location-card">
             <h3>ЛОКАЦИЯ</h3><div class="small-divider"></div>
             <div class="location-address"><strong>ЗАГС:</strong> ул. Адама Мицкевича, 5<br><strong>Кафе «Традиция»:</strong> ул. Советская, 22, большой зал</div>
-            <div class="location-slider-container" id="locationSliderContainer">
-                <div class="location-slider-track" id="locationSliderTrack">
-                    <div class="location-slide"><img src="локация1.jpg" alt="Локация 1"></div>
-                    <div class="location-slide"><img src="локация2.jpg" alt="Локация 2"></div>
-                </div>
-                <button class="location-slider-btn loc-btn-left" id="locPrevSlide">‹</button>
-                <button class="location-slider-btn loc-btn-right" id="locNextSlide">›</button>
+            <div class="location-single-image">
+                <img src="локация1.jpg" alt="Локация">
             </div>
-            <div class="location-dots" id="locationDots"></div>
             <a href="https://yandex.by/maps/org/traditsiya/107912523380/?ll=25.303924%2C53.894129&z=16" target="_blank" rel="noopener" class="btn-map">ПОСТРОИТЬ МАРШРУТ</a>
         </div>
     </div>
@@ -338,24 +307,18 @@
             <div class="timeline-content">
                 <div class="timeline-time">12:00</div>
                 <div class="second-day-divider"></div>
-                <div class="timeline-event">2-й день: продолжение праздника на даче</div>
+                <div class="timeline-event">2-й день: дача, баня, бассейн, шашлык</div>
+                <div class="timeline-event" style="font-size: 1.05rem; font-weight: 400; color: #444; margin-top: 0.25rem;">09.08.2026</div>
                 <div class="timeline-event" style="font-size: 1.05rem; font-weight: 400; color: #444; margin-top: 0.25rem;">СТ «Дайнова-2», 83</div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="gallery-block fade-up">
-    <div class="gallery-container">
-        <h2 class="gallery-title">ФОТОГАЛЕРЕЯ</h2><div class="small-divider"></div>
-        <div class="slider-container"><button class="slider-btn btn-left" id="prevSlide">‹</button><div class="slider-track" id="sliderTrack"><div class="slide"><img src="1.JPG" alt="Свадебное фото 1"></div><div class="slide"><img src="2.JPG" alt="Свадебное фото 2"></div></div><button class="slider-btn btn-right" id="nextSlide">›</button></div><div class="slider-dots" id="sliderDots"></div>
-    </div>
-</section>
-
 <section class="wishes-block fade-up">
     <div class="wishes-content"><h2 class="wishes-title">ПОЖЕЛАНИЯ</h2><div class="small-divider"></div>
         <p class="wishes-text">Любой знак внимания — уже подарок. И неважно, в каком он конверте.</p>
-        <p class="wishes-text">Цветы дарят прекрасный, но кратковременный момент. Позвольте нам сохранять мгновения надолго — картриджи для Instax Mini 12 станут для нас отличным подарком.</p>
+        <p class="wishes-text">Цветы — это прекрасно, но мы не успеем насладиться ими. Позвольте нам хранить воспоминания дольше: картриджи для Instax Mini 12 станут отличным подарком.</p>
         <p class="wishes-text">И ещё одна маленькая традиция: если захотите поднять нас с места криком «Горько!» — приготовьте купюру в 50 рублей. Поверьте, это сделает поцелуй ещё слаще, а вашу щедрость мы запомним навсегда.</p>
     </div>
 </section>
@@ -423,26 +386,7 @@
     const animated = document.querySelectorAll('.fade-up');
     const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
     animated.forEach(el => observer.observe(el));
-    // главный слайдер фотогалереи
-    const track = document.getElementById('sliderTrack'), slides = document.querySelectorAll('#sliderTrack .slide');
-    if (slides.length && track) {
-        let idx = 0; const dots = document.getElementById('sliderDots');
-        function upd() { track.style.transform = `translateX(-${idx * 100}%)`; if(dots) dots.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i===idx)); }
-        if(dots) { for (let i=0; i<slides.length; i++) { const d=document.createElement('div'); d.className='dot'+(i===0?' active':''); d.onclick=()=>{idx=i;upd();}; dots.appendChild(d); } }
-        document.getElementById('prevSlide').onclick=()=>{idx=(idx-1+slides.length)%slides.length;upd();};
-        document.getElementById('nextSlide').onclick=()=>{idx=(idx+1)%slides.length;upd();};
-    }
-    // слайдер для локации (два фото)
-    const locTrack = document.getElementById('locationSliderTrack');
-    const locSlides = document.querySelectorAll('#locationSliderTrack .location-slide');
-    if (locTrack && locSlides.length) {
-        let locIdx = 0;
-        const locDotsContainer = document.getElementById('locationDots');
-        function updateLocSlider() { locTrack.style.transform = `translateX(-${locIdx * 100}%)`; if(locDotsContainer) locDotsContainer.querySelectorAll('.loc-dot').forEach((d,i)=>d.classList.toggle('active', i===locIdx)); }
-        if(locDotsContainer) { for (let i=0; i<locSlides.length; i++) { const dot = document.createElement('div'); dot.className = 'loc-dot' + (i===0 ? ' active' : ''); dot.onclick = () => { locIdx = i; updateLocSlider(); }; locDotsContainer.appendChild(dot); } }
-        document.getElementById('locPrevSlide').onclick = () => { locIdx = (locIdx - 1 + locSlides.length) % locSlides.length; updateLocSlider(); };
-        document.getElementById('locNextSlide').onclick = () => { locIdx = (locIdx + 1) % locSlides.length; updateLocSlider(); };
-    }
+    
     const form = document.getElementById('presenceForm'), msg = document.getElementById('soonMessage');
     if (form) { msg.style.display = 'none'; form.addEventListener('submit', async function(e) { e.preventDefault(); if (!document.getElementById('fullname').value.trim()) { alert('Укажите имя'); return; } const btn = form.querySelector('.submit-btn'); btn.textContent = 'Отправляем...'; btn.disabled = true; try { const r = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} }); if (r.ok) { form.style.display='none'; msg.style.display='block'; } else throw new Error(); } catch { alert('Ошибка. Попробуйте ещё раз.'); btn.textContent='Отправить'; btn.disabled=false; } }); }
 })();
