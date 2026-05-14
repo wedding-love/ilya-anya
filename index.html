@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -71,31 +70,39 @@
         .location-single-image { margin: 1.5rem 0; border-radius: 20px; overflow: hidden; }
         .location-single-image img { width: 100%; height: auto; display: block; object-fit: cover; aspect-ratio: 4 / 3; }
 
-        .btn-map { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #111111; border: 1px solid #111111; padding: 0.8rem 2.2rem; font-size: 1rem; text-decoration: none; transition: all 0.2s; font-family: inherit; margin-top: 0.5rem; }
+        .btn-map { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #111111; border: 1px solid #111111; padding: 0.8rem 2.2rem; font-size: 1rem; text-decoration: none; transition: all 0.2s; font-family: inherit; margin-top: 0.5rem; border-radius: 40px; }
         .btn-map:hover { background: #111111; color: #ffffff; transform: translateY(-2px); }
 
         .timeline-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
         .timeline-title { text-align: center; font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 500; margin-bottom: 3rem; }
         .timeline { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 0; }
-        .timeline-item { display: flex; align-items: center; gap: 1.5rem; padding: 1.4rem 0; border-bottom: 1px solid #eeeeee; }
+        .timeline-item { display: flex; align-items: center; gap: 0.9rem; padding: 0.85rem 0; border-bottom: 1px solid #eeeeee; }
         .timeline-item:last-child { border-bottom: none; }
         .timeline-icon-wrap {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.4;
-}
-.timeline-icon-wrap svg {
-    width: 100%;
-    height: 100%;
-    fill: #111;
-}
-        .timeline-content { flex: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
-        .timeline-time { font-size: 1.4rem; font-weight: 600; letter-spacing: 0.02em; white-space: nowrap; }
-        .timeline-event { font-size: 1.15rem; color: #444; text-align: right; }
+            flex-shrink: 0;
+            width: 1.2rem;
+            height: 1.2rem;
+            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .timeline-icon-wrap svg {
+            width: 100%;
+            height: 100%;
+            fill: #111;
+            stroke: none;
+        }
+        .timeline-content { flex: 1; display: flex; align-items: baseline; justify-content: space-between; gap: 0.5rem; }
+        .timeline-time { font-size: 1.25rem; font-weight: 600; letter-spacing: 0.01em; white-space: nowrap; }
+        .timeline-event { font-size: 1.05rem; color: #444; text-align: right; line-height: 1.4; }
+
+        @media (max-width: 640px) {
+            .timeline-icon-wrap { width: 1rem; height: 1rem; }
+            .timeline-item { gap: 0.7rem; padding: 0.7rem 0; }
+            .timeline-time { font-size: 1.1rem; }
+            .timeline-event { font-size: 0.95rem; }
+        }
 
         .wishes-block { background: #ffffff; padding: 4rem 1.5rem; border-bottom: 1px solid #eeeeee; }
         .wishes-content { max-width: 800px; margin: 0 auto; text-align: center; }
@@ -114,6 +121,7 @@
         .radio-group label, .checkbox-group label { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: normal; margin-bottom: 0; font-size: 1.05rem; }
         .submit-btn { background: #111; color: #fff; border: none; padding: 0.9rem 2.5rem; font-size: 1.1rem; font-family: inherit; cursor: pointer; transition: background 0.2s; margin-top: 1rem; border-radius: 40px; }
         .submit-btn:hover { background: #333; }
+        .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .soon-message { margin-top: 2rem; font-size: 1.3rem; font-weight: 500; display: none; }
 
         .contacts-block { background: #ffffff; padding: clamp(3rem, 8vw, 5rem) 1.5rem; border-bottom: 1px solid #eeeeee; text-align: center; }
@@ -137,51 +145,6 @@
         footer { background: #ffffff; text-align: center; padding: 2.5rem; font-size: 0.85rem; border-top: 1px solid #eeeeee; }
         .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-        /* Стили для иконок тайминга */
-        .timeline-icon-wrap {
-            width: 1.2rem;
-            height: 1.2rem;
-            opacity: 0.5;
-        }
-        .timeline-icon-wrap svg {
-            width: 100%;
-            height: 100%;
-            fill: #111;
-            stroke: none;
-        }
-        .timeline-item {
-            gap: 0.9rem;
-            padding: 0.85rem 0;
-        }
-        .timeline-time {
-            font-size: 1.25rem;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-        }
-        .timeline-event {
-            font-size: 1.05rem;
-            line-height: 1.4;
-        }
-        @media (max-width: 640px) {
-            .timeline-icon-wrap {
-                width: 1rem;
-                height: 1rem;
-            }
-            .timeline-item {
-                gap: 0.7rem;
-                padding: 0.7rem 0;
-            }
-            .timeline-content {
-                gap: 0.5rem;
-            }
-            .timeline-time {
-                font-size: 1.1rem;
-            }
-            .timeline-event {
-                font-size: 0.95rem;
-            }
-        }
         .timeline-icon-wrap svg path,
         .timeline-icon-wrap svg circle,
         .timeline-icon-wrap svg g {
@@ -231,9 +194,9 @@
                 <strong>2-й день:</strong> СТ «Дайнова-2», 83
             </div>
             <div class="location-single-image">
-                <img src="локация1.jpg" alt="Локация">
+                <img src="image.png" alt="Локация">
             </div>
-            <a href="https://yandex.by/maps/org/traditsiya/107912523380/?ll=25.303924%2C53.894129&z=16" target="_blank" rel="noopener" class="btn-map">ПОСТРОИТЬ МАРШРУТ</a>
+            <a href="https://yandex.by/maps/?text=Советская%2022%20Лида" target="_blank" rel="noopener" class="btn-map">ПОСТРОИТЬ МАРШРУТ</a>
         </div>
     </div>
 </section>
@@ -254,179 +217,93 @@
             <div class="timeline-content"><div class="timeline-time">16:00</div><div class="timeline-event">Начало банкета</div></div>
         </div>
         <div class="timeline-item">
-            <div class="timeline-icon-wrap"><svg id="Layer_1" enable-background="new 0 0 520 520" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg"><path d="m326.8 391.5h-42.3l-13.1-40.2c-3.1-9.4-16.4-9.4-19.4 0l-13.1 40.2h-42.3c-9.9 0-14 12.7-6 18.5l34.2 24.9-13.1 40.2c-3 9.4 7.7 17.2 15.7 11.4l34.2-24.9 34.2 24.9c8 5.8 18.7-2.1 15.7-11.4l-13.1-40.2 34.2-24.9c8.2-5.8 4-18.5-5.8-18.5zm-49.9 42.6 5.7 17.4-14.8-10.8c-3.5-2.6-8.4-2.6-12 0l-14.8 10.8 5.7-17.4c1.4-4.2-.1-8.8-3.7-11.4l-15-10.8h18.3c4.4 0 8.3-2.8 9.7-7l5.7-17.4 5.7 17.4c1.4 4.2 5.3 7 9.7 7h18.3l-14.8 10.8c-3.6 2.6-5.1 7.2-3.7 11.4z"/><path d="m228.7 139.1 69.9 50.8-26.8 82.1c-3 9.4 7.7 17.2 15.7 11.4l69.9-50.8 69.9 50.8c8 5.8 18.7-2 15.7-11.4l-26.7-82.1 69.9-50.8c8-5.8 3.9-18.5-6-18.5h-86.4l-26.7-82.1c-3-9.4-16.4-9.4-19.4 0l-26.7 82.2h-86.4c-9.8 0-13.9 12.7-5.9 18.4zm99.7 2c4.4 0 8.3-2.8 9.7-7l19.3-59.3 19.3 59.3c1.4 4.2 5.3 7 9.7 7h62.4l-50.5 36.7c-3.6 2.6-5.1 7.2-3.7 11.4l19.3 59.3-50.5-36.7c-3.6-2.6-8.4-2.6-12 0l-50.5 36.7 19.3-59.3c1.4-4.2-.1-8.8-3.7-11.4l-50.5-36.7z"/><path d="m144.4 174.2h-32.5l-10-30.9c-3-9.4-16.4-9.4-19.4 0l-10 30.9h-32.6c-9.9 0-14 12.7-6 18.5l26.3 19.1-10 30.9c-3 9.4 7.7 17.2 15.7 11.4l26.2-19.1 26.3 19.1c7.9 5.8 18.8-2 15.7-11.4l-10-30.9 26.3-19.1c7.9-5.9 3.8-18.5-6-18.5zm-38.3 25.4c-3.6 2.6-5.1 7.2-3.7 11.4l2.6 8.1-6.9-5c-3.6-2.6-8.4-2.6-12 0l-6.9 5 2.6-8.1c1.4-4.2-.1-8.8-3.7-11.4l-6.9-5h8.5c4.4 0 8.3-2.8 9.7-7l2.6-8.1 2.6 8.1c1.4 4.2 5.3 7 9.7 7h8.5z"/><path d="m102.3 313.6c-16.9 0-30.6 13.7-30.6 30.6s13.7 30.6 30.6 30.6 30.6-13.7 30.6-30.6-13.7-30.6-30.6-30.6zm0 40.8c-5.6 0-10.2-4.6-10.2-10.2s4.6-10.2 10.2-10.2 10.2 4.6 10.2 10.2-4.6 10.2-10.2 10.2z"/><path d="m449.2 334c-22.5 0-40.8 18.3-40.8 40.8s18.3 40.8 40.8 40.8 40.8-18.3 40.8-40.8-18.3-40.8-40.8-40.8zm0 61.2c-11.3 0-20.4-9.2-20.4-20.4 0-11.3 9.2-20.4 20.4-20.4 11.3 0 20.4 9.2 20.4 20.4 0 11.3-9.1 20.4-20.4 20.4z"/><path d="m163.5 58.5c-16.9 0-30.6 13.7-30.6 30.6s13.7 30.6 30.6 30.6 30.6-13.7 30.6-30.6c0-16.8-13.7-30.6-30.6-30.6zm0 40.8c-5.6 0-10.2-4.6-10.2-10.2s4.6-10.2 10.2-10.2 10.2 4.6 10.2 10.2-4.5 10.2-10.2 10.2z"/><path d="m376.8 456.5c-5.6.6-9.7 5.6-9.1 11.2s5.6 9.7.7 11 11.2.2 9 9.1.1 9 9.7.7-5-5.6.6 9 9.1.1-11-.211.2-5-5.6.6--99.7.7-11.2-11.2-9-9.1.1z"/z"/><circle><circle cx=" cx="173.173.88"" cy=" cy="283"283" r=" r="10.10.2"/2"/><path><path d=" d="m234m234 313.7 313.7c-5.6.6-c-5.6.6-9.9.77  5.5.6-6-9.9.1 1 11.11.2s2s5.5.6 6 9.9.7 7 11.11.2 2 9.9.1 1 99.7-5..7-5.6 9.1-11.6 9.1-11.2-5.2-5.6-6-9.9.7-7-11.11.2-2-9.9.1z1z"/"/><circle cx><circle cx="71="71.7.7" cy" cy="425="425.8.8" r" r="10="10.2.2"/"/><path d><path d="m="m276.276.8 8 99.99.3c5.3c5.6-.6 6-.6 9.9.7-7-5.5.6 9.6 9.1-1-11.11.22ss-5-5.6.6-9-9.7.7-11-11.2.2-9-9.1.1-9-9.7.7 5 5..66-9-9.1.1 11 11.2.2 5 5.6.6 9 9.7.7 11 11.2.2  99.1z"/.1z"/><path><path d=" d="m468m468.6.6 191.2 191.2c-5.c-5.6.6.6-6-9.9.7 7 5.5.6-6-9.1 9.1 11.11.2s2s5.5.6 6 9.9.7 7 11.11.2 9.2 9.1 1 9.9.7-7-5.5.6 6 9.9.1-1-11.11.2c2c-.5-.5-5-5.6.6-5.6-5.6-9-9.6-11.6.2-11.2-9-9.1.1z"/z"/><path><path d=" d="m153m153.4.4 450 450.5.5 14 14.3.3 14 14.4.4 14 14.4.4-14-14.5.5-14-14.4.4-14-14.4.4z"/z"/><path><path d=" d="m337m337 328.1 328.1 14.4 14.4 14 14.4.4 14 14.3.3-14-14..55-14-14.3.3-14-14.4.4z"/z"/><path><path d=" d="m243m243.3.3 217 217.5.5-14-14.4.4-14-14.4.4-14-14.3.3 14 14.5.5 14 14.3.3 14 14.4z"/.4><pathz"/><path d=" d="m92m92.1.1 93 93.3.3-14-14.3.3-14-14.4.4-14.4-14.4 14 14.5.5 14 14.4.4 14 14.4.4z"/z"/><path><path d=" d="m439m439 62 62.7.7-14-14.3-14.3-14..44-14-14.4.4 14 14.5.5 14 14.4.4 14 14.4.4z"/z"/></svg></svg></div></div>
-           >
-            <div <div class=" class="timelinetimeline-content-content"><div class"><div class="tim="timeline-timeeline-time">">2222:00:00</div</div><div><div class=" class="timeline-event">timeline-event">ЗаверЗавершение вешение вечерачера</</divdiv></div></div>
-       >
-        </div </div>
-       >
-        <div <div class=" class="timtimeline-item">
-            <div class="timeline-item">
-            <div class="timeline-iconeline-icon-wrap-wrap"><svg view"><svg viewBox="Box="0 0 0 0 512 512 512"512" xmlns=" xmlns="http://http://www.wwww.w3.org3.org/2000/s/2000/svgvg"><circle"><circle cx=" cx="256"256" cy="256" cy="256" r=" r="220220" fill" fill="none="none" stroke" stroke="#111="#111" stroke" stroke-width="-width="30"/30"/><polygon><polygon points=" points="230230,140,140 230 230,270,270 340 340,330,330  350350,310,310 255 255,260,260 255 255,140,140"" fill fill="#111="#111"/></"/></svg></svg></div>
-div>
-                       <div class <div class="tim="timeline-contenteline-content"><div"><div class=" class="timelinetimeline-time">-time">12:12:00</00</divdiv><div class><div class="tim="timeline-eventeline-event">2">2-й-й день: день: дача дача, бан, баня,я, басс бассейнейн, ша, шашшлылык<brк<br><span><span style=" style="font-sizefont-size: : 0.0.9rem9rem; color; color: #: #777777;">09;">09.08.08.202.2026</6</span></span></div></div></div>
-div>
-        </        </div>
-div>
-    </    </div>
-div>
-</section</section>
-
-<section>
-
-<section class="wishes class="wishes-block fade-block fade-up">
--up">
-       <div class <div class="w="wishes-content"><h2 classishes-content"><h2 class="w="wishes-titleishes-title">П">ПОЖОЖЕЛАЕЛАНИЯНИЯ</h</h22><div class><div class="="smallsmall-divider"></div-divider"></div>
-       >
-        < <p class="p class="wisheswishes-text">-text">ЛюЛюбой знабой знак внимак внимания —ния — уже под уже подарокарок. И. И нева неважно,жно, в как в каком оном он конвер конверте.</те.</p>
-p>
-        <p class        <p class="w="wishes-textishes-text">Ц">Цветыветы — это — это прекрасно прекрасно, но, но мы не мы не успеем успеем наслади насладиться имиться ими. П. Позвольозвольте намте нам хранить хранить воспомина воспоминания дния дольшеольше: кар: картридтриджи дляжи для Instax Instax Mini  Mini 1212 ста станут отличнымнут отличным под подарарком.</ком.</p>
-p>
-               <p class <p class="w="wishes-textishes-text">И">И ещё одна ещё одна маленькая маленькая традиция традиция: если: если захоти захотите подте поднять наснять нас с места с места криком криком «Г «Горьорько!ко!» —» — приготовьте приготовьте куп купюруюру в  в 50 рублей50 рублей. Пов. Поверьтеерьте, это, это сдела сделает поцеетлуй ещё поцелуй ещё слаще слаще, а, а вашу вашу щед щедростьрость мы зап мы запомнимомним навсе навсегдагда.</p.</p>
-   >
-    </div </div>
+            <div class="timeline-icon-wrap"><svg id="Layer_1" enable-background="new 0 0 520 520" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg"><path d="m326.8 391.5h-42.3l-13.1-40.2c-3.1-9.4-16.4-9.4-19.4 0l-13.1 40.2h-42.3c-9.9 0-14 12.7-6 18.5l34.2 24.9-13.1 40.2c-3 9.4 7.7 17.2 15.7 11.4l34.2-24.9 34.2 24.9c8 5.8 18.7-2.1 15.7-11.4l-13.1-40.2 34.2-24.9c8.2-5.8 4-18.5-5.8-18.5zm-49.9 42.6 5.7 17.4-14.8-10.8c-3.5-2.6-8.4-2.6-12 0l-14.8 10.8 5.7-17.4c1.4-4.2-.1-8.8-3.7-11.4l-15-10.8h18.3c4.4 0 8.3-2.8 9.7-7l5.7-17.4 5.7 17.4c1.4 4.2 5.3 7 9.7 7h18.3l-14.8 10.8c-3.6 2.6-5.1 7.2-3.7 11.4z"/><path d="m228.7 139.1 69.9 50.8-26.8 82.1c-3 9.4 7.7 17.2 15.7 11.4l69.9-50.8 69.9 50.8c8 5.8 18.7-2 15.7-11.4l-26.7-82.1 69.9-50.8c8-5.8 3.9-18.5-6-18.5h-86.4l-26.7-82.1c-3-9.4-16.4-9.4-19.4 0l-26.7 82.2h-86.4c-9.8 0-13.9 12.7-5.9 18.4zm99.7 2c4.4 0 8.3-2.8 9.7-7l19.3-59.3 19.3 59.3c1.4 4.2 5.3 7 9.7 7h62.4l-50.5 36.7c-3.6 2.6-5.1 7.2-3.7 11.4l19.3 59.3-50.5-36.7c-3.6-2.6-8.4-2.6-12 0l-50.5 36.7 19.3-59.3c1.4-4.2-.1-8.8-3.7-11.4l-50.5-36.7z"/><path d="m144.4 174.2h-32.5l-10-30.9c-3-9.4-16.4-9.4-19.4 0l-10 30.9h-32.6c-9.9 0-14 12.7-6 18.5l26.3 19.1-10 30.9c-3 9.4 7.7 17.2 15.7 11.4l26.2-19.1 26.3 19.1c7.9 5.8 18.8-2 15.7-11.4l-10-30.9 26.3-19.1c7.9-5.9 3.8-18.5-6-18.5zm-38.3 25.4c-3.6 2.6-5.1 7.2-3.7 11.4l2.6 8.1-6.9-5c-3.6-2.6-8.4-2.6-12 0l-6.9 5 2.6-8.1c1.4-4.2-.1-8.8-3.7-11.4l-6.9-5h8.5c4.4 0 8.3-2.8 9.7-7l2.6-8.1 2.6 8.1c1.4 4.2 5.3 7 9.7 7h8.5z"/><path d="m102.3 313.6c-16.9 0-30.6 13.7-30.6 30.6s13.7 30.6 30.6 30.6 30.6-13.7 30.6-30.6-13.7-30.6-30.6-30.6zm0 40.8c-5.6 0-10.2-4.6-10.2-10.2s4.6-10.2 10.2-10.2 10.2 4.6 10.2 10.2-4.6 10.2-10.2 10.2z"/><path d="m449.2 334c-22.5 0-40.8 18.3-40.8 40.8s18.3 40.8 40.8 40.8 40.8-18.3 40.8-40.8-18.3-40.8-40.8-40.8zm0 61.2c-11.3 0-20.4-9.2-20.4-20.4 0-11.3 9.2-20.4 20.4-20.4 11.3 0 20.4 9.2 20.4 20.4 0 11.3-9.1 20.4-20.4 20.4z"/><path d="m163.5 58.5c-16.9 0-30.6 13.7-30.6 30.6s13.7 30.6 30.6 30.6 30.6-13.7 30.6-30.6c0-16.8-13.7-30.6-30.6-30.6zm0 40.8c-5.6 0-10.2-4.6-10.2-10.2s4.6-10.2 10.2-10.2 10.2 4.6 10.2 10.2-4.5 10.2-10.2 10.2z"/><path d="m376.8 456.5c-5.6.6-9.7 5.6-9.1 11.2s5.6 9.7 11.2 9.1 9.7-5.6 9.1-11.2-5.6-9.7-11.2-9.1z"/><circle cx="173.8" cy="283" r="10.2"/><path d="m234 313.7c-5.6.6-9.7 5.6-9.1 11.2s5.6 9.7 11.2 9.1 9.7-5.6 9.1-11.2-5.6-9.7-11.2-9.1z"/><circle cx="71.7" cy="425.8" r="10.2"/><path d="m276.8 99.3c5.6-.6 9.7-5.6 9.1-11.2s-5.6-9.7-11.2-9.1-9.7 5.6-9.1 11.2 5.6 9.7 11.2 9.1z"/><path d="m468.6 191.2c-5.6.6-9.7 5.6-9.1 11.2s5.6 9.7 11.2 9.1 9.7-5.6 9.1-11.2-5.6-9.7-11.2-9.1z"/><path d="m153.4 450.5 14.3 14.4 14.4-14.5-14.4-14.4z"/><path d="m337 328.1 14.4 14.3 14.4-14.5-14.3-14.4z"/><path d="m243.3 217.5-14.4-14.4-14.4 14.5 14.3 14.4z"/><path d="m92.1 93.3-14.3-14.4-14.4 14.5 14.4 14.4z"/><path d="m439 62.7-14.3-14.4-14.4 14.5 14.4 14.4z"/></svg></div>
+            <div class="timeline-content"><div class="timeline-time">22:00</div><div class="timeline-event">Завершение вечера</div></div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-icon-wrap"><!-- icon666.com - MILLIONS OF FREE VECTOR ICONS --><svg viewBox="-65 0 512 512.00115" xmlns="http://www.w3.org/2000/svg"><path d="m93.300781 45.398438c-2.242187 4.980468 1.425781 10.585937 6.835938 10.585937 2.863281 0 5.597656-1.648437 6.847656-4.425781 4.078125-9.066406 2.097656-19.875-4.929687-26.90625-3.179688-3.179688-3.566407-8.121094-.921876-11.753906l.710938-.972657c2.441406-3.347656 1.703125-8.042969-1.644531-10.484375-3.347657-2.441406-8.042969-1.707031-10.484375 1.644532l-.710938.976562c-7.023437 9.640625-6 22.765625 2.4375 31.199219 2.648438 2.648437 3.394532 6.722656 1.859375 10.136719zm0 0"/><path d="m131.550781 45.398438c-1.699219 3.777343-.015625 8.222656 3.765625 9.921874 3.777344 1.703126 8.21875.015626 9.921875-3.761718 4.078125-9.066406 2.09375-19.878906-4.933593-26.90625-3.179688-3.179688-3.566407-8.121094-.917969-11.753906l.707031-.972657c2.441406-3.351562 1.707031-8.042969-1.640625-10.484375s-8.042969-1.707031-10.484375 1.644532l-.710938.972656c-7.027343 9.644531-6.003906 22.765625 2.433594 31.203125 2.648438 2.648437 3.394532 6.722656 1.859375 10.136719zm0 0"/><path d="m169.800781 45.398438c-2.238281 4.980468 1.429688 10.585937 6.839844 10.585937 2.859375 0 5.597656-1.648437 6.847656-4.425781 4.078125-9.066406 2.097657-19.875-4.933593-26.90625-3.175782-3.179688-3.5625-8.121094-.917969-11.753906l.710937-.972657c2.4375-3.347656 1.703125-8.042969-1.644531-10.484375-3.351563-2.441406-8.042969-1.707031-10.484375 1.644532l-.710938.976562c-7.023437 9.640625-6 22.765625 2.433594 31.199219 2.648438 2.648437 3.394532 6.722656 1.859375 10.136719zm0 0"/><path d="m208.054688 45.398438c-2.242188 4.980468 1.425781 10.585937 6.835937 10.585937 2.863281 0 5.597656-1.648437 6.847656-4.425781 4.078125-9.066406 2.097657-19.878906-4.929687-26.90625-3.179688-3.179688-3.566406-8.121094-.917969-11.753906l.707031-.972657c2.441406-3.347656 1.707032-8.042969-1.644531-10.484375-3.347656-2.441406-8.042969-1.707031-10.484375 1.644532l-.707031.972656c-7.027344 9.644531-6.003907 22.765625 2.433593 31.203125 2.648438 2.648437 3.394532 6.722656 1.859376 10.136719zm0 0"/><path d="m246.304688 45.398438c-2.242188 4.980468 1.429687 10.585937 6.839843 10.585937 2.859375 0 5.59375-1.648437 6.84375-4.425781 4.082031-9.066406 2.097657-19.875-4.929687-26.90625-3.179688-3.179688-3.566406-8.121094-.914063-11.757813l.707031-.972656c2.4375-3.351563 1.699219-8.042969-1.648437-10.480469-3.351563-2.441406-8.046875-1.703125-10.484375 1.648438l-.707031.96875c-7.023438 9.644531-6 22.765625 2.4375 31.203125 2.644531 2.648437 3.390625 6.722656 1.855469 10.136719zm0 0"/><path d="m68.8125 114.796875h11.875v3.539063c0 7.699218 6.265625 13.964843 13.964844 13.964843h22.085937c1.878907 0 3.667969-.375 5.300781-1.050781 2.902344 2.332031 6.582032 3.738281 10.585938 3.738281h3.09375c5.472656 0 10.332031-2.621093 13.425781-6.660156 8.300781 5.34375 19.097657 5.34375 27.449219-.285156 2.539062 2.621093 6.089844 4.257812 10.019531 4.257812h22.085938c1.878906 0 3.664062-.375 5.300781-1.050781 2.902344 2.332031 6.578125 3.738281 10.582031 3.738281h3.097657c5.472656 0 10.332031-2.621093 13.425781-6.660156 13.839843 8.910156 32.40625 2.175781 37.359375-13.53125h24.160156c7.96875 0 15.148438-4.863281 18.289062-12.390625 2.195313-5.246094 7.488282-8.347656 13.191407-7.71875 5.808593.640625 10.488281 5.324219 11.132812 11.128906.867188 7.871094-5.300781 14.164063-12.605469 14.164063-4.148437 0-7.503906 3.359375-7.503906 7.503906s3.355469 7.503906 7.503906 7.503906c16.414063 0 29.347657-14.257812 27.519532-30.820312-1.40625-12.730469-11.667969-22.992188-24.398438-24.394531-12.367187-1.371094-23.902344 5.402343-28.683594 16.847656-.804687 1.925781-2.550781 3.167968-4.445312 3.167968h-24.160156c-4.949219-15.695312-23.507813-22.453124-37.359375-13.53125-3.09375-4.039062-7.953125-6.660156-13.425781-6.660156h-3.097657c-4.003906 0-7.679687 1.40625-10.582031 3.738282-1.636719-.671876-3.421875-1.050782-5.300781-1.050782h-22.085938c-3.929687 0-7.480469 1.636719-10.019531 4.261719-8.132812-5.484375-18.925781-5.777344-27.449219-.285156-3.09375-4.042969-7.953125-6.660157-13.425781-6.660157h-3.09375c-4.003906 0-7.683594 1.402344-10.585938 3.738282-1.632812-.675782-3.421874-1.054688-5.300781-1.054688h-22.085937c-7.699219 0-13.964844 6.265625-13.964844 13.964844v3.542969h-11.875c-4.144531 0-7.503906 3.359375-7.503906 7.503906 0 4.140625 3.359375 7.5 7.503906 7.5zm185.796875-17.503906c5.511719 0 10 4.484375 10 10s-4.488281 10.003906-10 10.003906c-5.515625 0-10.003906-4.488281-10.003906-10.003906 0-5.511719 4.488281-10 10.003906-10zm-30.027344-2.6875h3.097657c1.039062 0 1.917968.878906 1.917968 1.917969v21.539062c0 1.039062-.878906 1.917969-1.917968 1.917969h-3.097657c-1.039062 0-1.917969-.878907-1.917969-1.917969v-21.539062c0-1.039063.878907-1.917969 1.917969-1.917969zm-36.925781 2.6875h20v20.003906h-20zm-25.007812 0c5.515624 0 10 4.484375 10 10s-4.484376 10.003906-10 10.003906c-5.515626 0-10.003907-4.488281-10.003907-10.003906 0-5.511719 4.488281-10 10.003907-10zm-30.023438-2.6875h3.09375c1.042969 0 1.921875.878906 1.921875 1.917969v21.539062c0 1.039062-.878906 1.917969-1.921875 1.917969h-3.09375c-1.042969 0-1.921875-.878907-1.921875-1.917969v-21.539062c0-1.039063.878906-1.917969 1.921875-1.917969zm-36.929688 2.6875h20.003907v20.003906h-20.003907zm0 0"/><path d="m17.378906 212.320312h8.554688c2.882812 63.335938 42.105468 115.988282 98.460937 139.339844l-14.824219 55.316406c-26.746093 2.402344-47.78125 24.933594-47.78125 52.296876 0 28.960937 23.558594 52.519531 52.519532 52.519531 21.132812 0 40.121094-12.59375 48.382812-32.085938 1.613282-3.8125-.167968-8.21875-3.984375-9.835937-3.8125-1.613282-8.21875.167968-9.832031 3.980468-5.90625 13.933594-19.472656 22.933594-34.566406 22.933594-20.683594 0-37.515625-16.828125-37.515625-37.515625 0-20.683593 16.832031-37.511719 37.515625-37.511719 14.644531 0 28.527344 8.683594 34.566406 22.933594 1.613281 3.816406 6.019531 5.597656 9.832031 3.980469 3.816407-1.617187 5.601563-6.019531 3.984375-9.835937-3.695312-8.71875-9.542968-16.050782-16.761718-21.5l4.480468-16.722657h80.730469l26.394531 98.507813c2.480469 9.253906 12.027344 14.765625 21.285156 12.285156l2.9375-.785156c9.261719-2.484375 14.769532-12.027344 12.289063-21.285156l-36.933594-137.832032c56.160157-23.429687 95.214844-75.984375 98.089844-139.1875h8.558594c9.582031 0 17.375-7.792968 17.375-17.375v-8.046875c0-9.582031-7.792969-17.378906-17.375-17.378906h-155.480469c-4.144531 0-7.503906 3.359375-7.503906 7.503906s3.359375 7.503907 7.503906 7.503907h155.476562c1.285157 0 2.371094 1.085937 2.371094 2.371093v8.046875c0 1.285156-1.085937 2.371094-2.371094 2.371094-3.296874 0-342.132812 0-346.378906 0-1.285156 0-2.371094-1.085938-2.371094-2.371094v-8.046875c0-1.285156 1.085938-2.371093 2.371094-2.371093h155.886719c4.144531 0 7.503906-3.359376 7.503906-7.503907s-3.359375-7.503906-7.503906-7.503906h-155.886719c-9.582031 0-17.378906 7.796875-17.378906 17.378906v8.046875c0 9.582032 7.796875 17.378906 17.378906 17.378906zm107.5 195.507813 13.671875-51.039063c2.472657.773438 4.964844 1.492188 7.488281 2.152344l-13.671874 51.011719c-2.425782-.890625-4.925782-1.601563-7.488282-2.125zm29.550782-22.222656 6.292968-23.488281c19.699219 3.359374 40.269532 3.355468 60.085938-.070313l6.3125 23.558594zm125.121093 107.613281c.335938 1.246094-.433593 2.570312-1.675781 2.90625l-2.941406.785156c-1.234375.335938-2.570313-.433594-2.902344-1.675781l-36.546875-136.390625c2.519531-.667969 5.011719-1.394531 7.480469-2.171875zm-31.203125-154.386719c-6.738281 2.640625-18.535156 5.933594-25.558594 7.558594-20.980468 4.28125-43.058593 4.308594-64.078124.070313-7.023438-1.605469-18.820313-4.863282-25.566407-7.488282-52.472656-20.488281-89.265625-68.5625-92.191406-126.652344h299.234375c-2.921875 57.957032-39.558594 105.945313-91.839844 126.511719zm0 0"/><path d="m114.308594 433.671875c-14.117188 0-25.601563 11.484375-25.601563 25.601563 0 14.113281 11.484375 25.597656 25.601563 25.597656 14.117187 0 25.601562-11.484375 25.601562-25.597656 0-14.117188-11.484375-25.601563-25.601562-25.601563zm0 36.191406c-5.839844 0-10.59375-4.75-10.59375-10.589843 0-5.84375 4.753906-10.59375 10.59375-10.59375s10.59375 4.75 10.59375 10.59375c0 5.839843-4.753906 10.589843-10.59375 10.589843zm0 0"/></svg></div>
+            <div class="timeline-content"><div class="timeline-time">09.08.2026<br><span style="font-size:0.9rem;color:#777;">12:00</span></div><div class="timeline-event">2-й день: дача, баня, бассейн, шашлык</div></div>
+        </div>
+    </div>
 </section>
 
-<section class>
+<section class="wishes-block fade-up">
+    <div class="wishes-content"><h2 class="wishes-title">ПОЖЕЛАНИЯ</h2><div class="small-divider"></div>
+        <p class="wishes-text">Любой знак внимания — уже подарок. И неважно, в каком он конверте.</p>
+        <p class="wishes-text">Цветы — это прекрасно, но мы не успеем насладиться ими. Позвольте нам хранить воспоминания дольше: картриджи для Instax Mini 12 станут отличным подарком.</p>
+        <p class="wishes-text">И ещё одна маленькая традиция: если захотите поднять нас с места криком «Горько!» — приготовьте купюру в 50 рублей. Поверьте, это сделает поцелуй ещё слаще, а вашу щедрость мы запомним навсегда.</p>
+    </div>
 </section>
 
-<section class="pres="presence-blockence-block fade-up">
- fade-up   ">
-    <div <div class=" class="presencepresence-container-container"><h2"><h2 class=" class="presencepresence-title">-title">ПРИПРИСУСУТСТТСТВИВИЕ</Е</h2h2><div><div class=" class="small-divsmall-divider"></ider"></div>
-div>
-               <p class <p class="pres="presence-subence-sub">П">Пожалуйожалуйста,ста, ответьте ответьте на несколько на несколько вопросов вопросов, это, это поможет нам поможет нам в организации в организации торже торжества.</ства.</p>
-p>
-               <form id <form id="pres="presenceFormenceForm" action" action="https="https://form://formspreespree.io/f.io/f/x/xojryyojryyro"ro" method=" method="POST">
-POST">
-                       <div class <div class="form="form-group-group"><label for"><label for="full="fullname">name">ИмяИмя / И / Имена гмена гостейостей * *</</labellabel><input type><input type="text="text" id" id="full="fullname"name" name=" name="fullnamefullname" required" required placeholder=" placeholder="ПетПетроварова Ан Анна"></на"></div>
-div>
-                       <div class <div class="form="form-group"><label-group"><label>>СможСможете лиете ли вы присут вы присутствовать?ствовать? * *</</labellabel><><divdiv class class="radio-group"><label><input type="radio="radio-group"><label><input type="radio" name"="attendance name="att"endance" value=" value="ТоТочно приду"чно приду" required> required> Точно Точно приду приду</label><label</label><label><input><input type=" type="radio"radio" name=" name="attendanceattendance" value="Решу до" value="Решу до 01 01.08.08.202.2026">6"> Решу Решу до  до 01.01.08.08.20262026</label><label</label><label><input><input type=" type="radio"radio" name=" name="attendanceattendance" value" value="К="К сож сожалениюалению, не, не смогу смогу">"> К К сож сожалениюалению, не, не смогу смогу</label</label></div></div></div></div>
-           >
-            <div <div class=" class="form-groupform-group"><label"><label>При>Придёдётете ли ли на  на 2-2-й деньй день?</label?</label><div><div class=" class="radio-groupradio-group"><label"><label><input><input type=" type="radioradio"" name=" name="second_day" valuesecond_day" value="Да="Да, при, приду">ду"> Да, Да, приду приду</label</label><label><label><input><input type=" type="radio"radio" name=" name="second_day" valuesecond_day" value="П="Подумаодумаю">ю"> Поду Подумаюмаю</label</label><label><label><input><input type=" type="radio"radio" name=" name="second_daysecond_day" value" value="Н="Нет,ет, не при не приду">ду"> Нет Нет,, не не приду приду</label</label></div></div></div></div>
-           >
-            <div <div class=" class="form-groupform-group"><label"><label>Пред>Предпочтпочтения поения по напит напиткам</кам</labellabel><div class><div class="checkbox="checkbox-group-group"><label"><label><input type><input type="checkbox="checkbox" name" name="dr="drinks"inks" value value="="ШШаампанское"> Шампанское"> Шампанмпанское</ское</labellabel><label><label><input type><input type="checkbox="" namecheckbox" name="dr="drinks"inks" value=" value="БеБелое вилое вино">но"> Белое Белое вино вино</label</label><label><label><input><input type=" type="checkbox"checkbox" name=" name="drinksdrinks" value" value="К="Красноерасное вино вино"> Крас"> Красное виное вино</но</labellabel><label><label><input type><input type="checkbox="checkbox" name" name="dr="drinks"inks" value=" value="ВодВодка"> Водка"> Водка</ка</labellabel><><labellabel><input type><input type="checkbox="checkbox" name" name="dr="drinks" valueinks" value="Виски="Виски">"> Ви Виски</ски</label><label><input typelabel><label><input type="checkbox="checkbox" name" name="drinks"="drinks" value=" value="БеБезалзалкоголькогольныеные напи напитки">тки"> Беза Безалкоглкогольные напитки</labelольные напитки</label></div></div></div></div>
-            <div>
-            <div class class="="form-groupform-group"><label"><label for=" for="allergiesallergies">Е">Есть листь ли у вас у вас аллергии аллергии на е на еду?</ду?</labellabel><input type><input type="text="text" id" id="all="allergies"ergies" name="allergies" placeholder="Укажите, если name="allergies" placeholder="Укажите, если есть"></div>
- есть"></div>
-                       <div class <div class="form="form-group-group"><label>"><label>ЕстьЕсть ли ли у у вас но вас ночлегчлег в Ли в Лиде илиде или нужна нужна помощь?</ помощь?</labellabel><div class><div class="radio="radio-group-group"><label"><label><input type><input type="="radioradio" name" name="ac="accommodationcommodation" value" value="Е="Есть ность ночлег"> Ечлег"> Есть ностьчлег ночлег</label</label><label><label><input><input type=" type="radio"radio" name=" name="accommodaccommodation"ation" value=" value="НужНужна помощьна помощь"> Н"> Нужужнана помощь</ помощь</label></label></div></div></div>
-div>
-                       <div class <div class="form="form-group-group"><label for"><label for="message">Ва="message">Ваши пши пожелаожелания или комментарииния или комментарии</label><textarea</label><textarea id=" id="messagemessage"" name=" name="message" rowsmessage="" rows="2"2" placeholder=" placeholder="НапиНапишите,шите, если важно если важно"></textarea"></textarea></div></div>
-           >
-            <button <button type=" type="submit" class="submit" class="submit-btnsubmit-btn">От">Отправитьправить</button</button>
+<section class="presence-block fade-up">
+    <div class="presence-container"><h2 class="presence-title">ПРИСУТСТВИЕ</h2><div class="small-divider"></div>
+        <p class="presence-sub">Пожалуйста, ответьте на несколько вопросов, это поможет нам в организации торжества.</p>
+        <form id="presenceForm" action="https://formspree.io/f/xojryyro" method="POST">
+            <div class="form-group"><label for="fullname">Имя / Имена гостей *</label><input type="text" id="fullname" name="fullname" required placeholder="Петрова Анна"></div>
+            <div class="form-group"><label>Сможете ли вы присутствовать? *</label><div class="radio-group"><label><input type="radio" name="attendance" value="Точно приду" required> Точно приду</label><label><input type="radio" name="attendance" value="Решу до 01.08.2026"> Решу до 01.08.2026</label><label><input type="radio" name="attendance" value="К сожалению, не смогу"> К сожалению, не смогу</label></div></div>
+            <div class="form-group"><label>Придёте ли на 2-й день?</label><div class="radio-group"><label><input type="radio" name="second_day" value="Да, приду"> Да, приду</label><label><input type="radio" name="second_day" value="Подумаю"> Подумаю</label><label><input type="radio" name="second_day" value="Нет, не приду"> Нет, не приду</label></div></div>
+            <div class="form-group"><label>Предпочтения по напиткам</label><div class="checkbox-group"><label><input type="checkbox" name="drinks" value="Шампанское"> Шампанское</label><label><input type="checkbox" name="drinks" value="Белое вино"> Белое вино</label><label><input type="checkbox" name="drinks" value="Красное вино"> Красное вино</label><label><input type="checkbox" name="drinks" value="Водка"> Водка</label><label><input type="checkbox" name="drinks" value="Виски"> Виски</label><label><input type="checkbox" name="drinks" value="Безалкогольные напитки"> Безалкогольные напитки</label></div></div>
+            <div class="form-group"><label for="allergies">Есть ли у вас аллергии на еду?</label><input type="text" id="allergies" name="allergies" placeholder="Укажите, если есть"></div>
+            <div class="form-group"><label>Есть ли у вас ночлег в Лиде или нужна помощь?</label><div class="radio-group"><label><input type="radio" name="accommodation" value="Есть ночлег"> Есть ночлег</label><label><input type="radio" name="accommodation" value="Нужна помощь"> Нужна помощь</label></div></div>
+            <div class="form-group"><label for="message">Ваши пожелания или комментарии</label><textarea id="message" name="message" rows="2" placeholder="Напишите, если важно"></textarea></div>
+            <button type="submit" class="submit-btn">Отправить</button>
         </form>
-        </form>
-       >
-        <div <div class=" class="soon-msoon-message"essage" id=" id="soonMessagesoonMessage">Спа">Спасибо!сибо! Мы получили ва Мы получили ваши ответши ответы.ы. До ск До скоройорой встречи встречи!</div!</div>
-   >
-    </div </div>
-</>
+        <div class="soon-message" id="soonMessage">Спасибо! Мы получили ваши ответы. До скорой встречи!</div>
+    </div>
 </section>
 
-section>
+<section class="contacts-block fade-up">
+    <div class="contacts-container"><h2 class="contacts-title">КОНТАКТЫ</h2><div class="small-divider"></div>
+        <p class="young-couple-text">Если у вас появятся вопросы, идеи или просто захочется поделиться настроением — пишите нам. Мы всегда на связи!</p>
+        <div class="couple-buttons"><a href="tel:+375256816780" class="contact-btn"><span class="btn-label">Жених</span><span class="btn-name">Илья</span><span class="btn-phone">+375 25 681-67-80</span></a><a href="tel:+375295820259" class="contact-btn"><span class="btn-label">Невеста</span><span class="btn-name">Анна</span><span class="btn-phone">+375 29 582-02-59</span></a></div>
+    </div>
+</section>
 
-<section class<section class="contacts="contacts-block fade-block fade-up">
--up">
-       <div class <div class="contacts-container="contacts-container"><h2"><h2 class=" class="contacts-title">КОcontacts-title">КОНТНТАКТАКТЫ</Ы</h2h2><div><div class=" class="small-divider"></small-divider"></div>
-div>
-               <p class <p class="="young-coupleyoung-couple-text">-text">Если уЕсли у вас по вас появятсяявятся вопросы, вопросы, идеи идеи или просто или просто захоч захочется подется поделитьсяелиться настроением настроением — пи — пишите нам.шите нам Мы. Мы всегда на всегда на связи!</ связи!</p>
-p>
-               <div class <div class="cou="couple-bple-buttonsuttons"><a href=""><a href="tel:+tel:+375256375256816780816780" class" class="contact="contact-btn-btn"><span class"><span class="btn="btn-label">-label">ЖениЖенихх</</spanspan><span class><span class="btn="btn-name">-name">ИльяИлья</span</span><span><span class=" class="btn-btn-phone">phone">+375+375 25 25 681 681-67-67-80-80</span</span></a></a><a><a href=" href="tel:+tel:+375295375295820259820259" class" class="contact="contact-btn-btn"><span class"><span class="btn="btn-label">-label">НевеНевеста</ста</spanspan><span class><span class="btn="btn-name">-name">АнАнна</на</spanspan><span class><span class="btn-phone="btn-phone">+">+375375  29 582-29 582-02-02-59</59</span></span></a></a></div>
-div>
-    </    </div>
-div>
-</section</section>
->
-<footer><footer>С НС НЕТЕРЕТЕРПЕНИПЕНИЕМЕМ ЖД ЖДЁМЁМ ВА ВАС НА НС НА НАШАШЕМЕМ ПРА ПРАЗДЗДНИКНИКЕ</Е</footer>
-
-footer>
+<footer>С НЕТЕРПЕНИЕМ ЖДЁМ ВАС НА НАШЕМ ПРАЗДНИКЕ</footer>
 
 <script>
-<script>
-(function()(function() {
-    {
-    const year const year =  = 20262026, month, month =  = 7,7, specialDay specialDay =  = 8;
-8;
-    const firstDay    const firstDay = new = new Date(year Date(year, month, month, , 11);
-    let);
+(function() {
+    const year = 2026, month = 7, specialDay = 8;
+    const firstDay = new Date(year, month, 1);
     let firstWeekday = firstDay.getDay();
-    let offset = firstWeekday === 0 firstWeekday = firstDay.getDay();
-    let offset = firstWeekday === 0 ? 6 : ? 6 : firstWeekday - 1;
-    const daysInMonth = new Date(year, month firstWeekday - 1;
-    const daysInMonth = new Date(year, month + 1,  + 1, 0).getDate();
+    let offset = firstWeekday === 0 ? 6 : firstWeekday - 1;
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
     let daysArray = [];
-    for (let i =0).getDate();
-    let daysArray = [];
-    for (let i = 0; i < offset 0; i < offset; i++); i++) days daysArrayArray.push({.push({ day: day: null, null, empty: empty: true });
- true });
-    for    for (let (let d = d = 1 1; d <= days; d <= daysInMonthInMonth; d; d++) days++) daysArray.push({ day: dArray.push({ day: d, empty:, empty false: false });
-    });
-    const remaining const remaining =  = 42 -42 - daysArray daysArray.length;
-.length;
-    for    for (let (let i = i = 0 0; i; i < remaining < remaining;; i i++) days++) daysArray.pushArray.push({ day({ day: null: null, empty, empty: true: true });
-    });
-    const container const container = document = document.getElementById('.getElementById('calendarGridcalendarGrid');
-');
-       if ( if (container)container) {
-        {
-        container.innerHTML container.innerHTML = '';
- = '';
-        days        daysArray.forEachArray.forEach(cell(cell => {
- => {
-            const            const dayDiv dayDiv = document = document.createElement('.createElement('div');
-div');
-            day            dayDiv.classDiv.className =Name = 'calendar-day';
- 'calendar-day';
-            if            if (cell (cell.empty.empty)) { day { dayDiv.classListDiv.classList.add('.add('empty');empty'); dayDiv dayDiv.textContent.textContent = '' = ''; }
-; }
-            else            else if ( if (cell.day === specialcell.day === specialDayDay)) { day { dayDiv.innerHTMLDiv.innerHTML = = '<div class '<div class="heart="heart-svg-svg"><svg"><svg viewBox viewBox="0="0 0 0  100100 100 100"><path"><path fill="# fill="#e33e33f3f3f"f" d=" d="M50M50,90,90 L20 L20,60,60 C C1010,50,50 5, 535,35 15 15,20,20 C25 C25,5,5 45 45,10,10 50 50,25,25 C55 C55,10,10 75 75,5,5 85 85,20,20 C95 C95,35,35 90 90,50,50 80 80,60,60 L50 L50,90Z,90"/><textZ"/><text x="50" x="50" y=" y="60"60" font-size font-size="36="36" text" text-anchor-anchor="middle="middle" fill" fill="white="white" font-weight="" font-weight="boldbold">">8</8</text></svg></text></svg></div>div>'; }
-'; }
-            else            else { day { dayDiv.textDiv.textContent =Content = cell.day cell.day; }
-; }
-            container            container.appendChild(.appendChild(dayDivdayDiv);
+    for (let i = 0; i < offset; i++) daysArray.push({ day: null, empty: true });
+    for (let d = 1; d <= daysInMonth; d++) daysArray.push({ day: d, empty: false });
+    const remaining = 42 - daysArray.length;
+    for (let i = 0; i < remaining; i++) daysArray.push({ day: null, empty: true });
+    const container = document.getElementById('calendarGrid');
+    if (container) {
+        container.innerHTML = '';
+        daysArray.forEach(cell => {
+            const dayDiv = document.createElement('div');
+            dayDiv.className = 'calendar-day';
+            if (cell.empty) { dayDiv.classList.add('empty'); dayDiv.textContent = ''; }
+            else if (cell.day === specialDay) { dayDiv.innerHTML = '<div class="heart-svg"><svg viewBox="0 0 100 100"><path fill="#e33f3f" d="M50,90 L20,60 C10,50 5,35 15,20 C25,5 45,10 50,25 C55,10 75,5 85,20 C95,35 90,50 80,60 L50,90Z"/><text x="50" y="60" font-size="36" text-anchor="middle" fill="white" font-weight="bold">8</text></svg></div>'; }
+            else { dayDiv.textContent = cell.day; }
+            container.appendChild(dayDiv);
         });
     }
-    function);
-        });
+    function updateCountdown() {
+        const target = new Date(2026, 7, 8, 13, 40, 0);
+        const diff = target - new Date();
+        if (diff <= 0) { ['days','hours','minutes','seconds'].forEach(id => document.getElementById(id).textContent = '0'); return; }
+        document.getElementById('days').textContent = Math.floor(diff / 86400000);
+        document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000);
+        document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
+        document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
     }
-    function update updateCountdownCountdown() {
-() {
-        const target =        const target = new Date new Date(202(2026,6, 7 7, , 8,8, 13 13, , 40,40, 0 0);
-       );
-        const const diff = target diff = target - new - new Date();
- Date();
-        if        if (diff (diff <=  <= 0)0) { [' { ['days','hours','days','hours','minutes','minutes','seconds'].seconds'].forEach(idforEach(id => document.getElementById(id => document.getElementById(id).textContent = ').textContent = '0'); return0'); return; }
-; }
-        document        document.getElementById('days').textContent = Math.getElementById('days').textContent = Math.floor(diff /.floor(diff / 864 8640000000000);
-       );
-        document.getElementById document.getElementById('hours('hours').text').textContent =Content = Math.floor Math.floor((diff((diff %  % 86400000) / 36000086400000) / 3600000);
-0);
-        document        document.getElementById('.getElementById('minutes').minutes').textContenttextContent = Math = Math.floor.floor((((diff %diff % 360 36000000000) /) / 600 60000);
-00);
-        document        document.getElementById('seconds')..getElementById('seconds').textContenttextContent = Math = Math.floor((.floor((diffdiff % % 600 60000) / 00) / 10001000);
-   );
-    }
-    }
-    updateCount updateCountdown();down(); setInterval setInterval(update(updateCountdownCountdown, , 10001000);
-   );
-    document.getElementById document.getElementById('scroll('scrollArrow').Arrow').addEventListeneraddEventListener('click('click', ()', () => document => document.getElementById.getElementById('('guestsguests-section').-section').scrollIntoscrollIntoView({ behavior:View({ behavior: 's 'smooth',mooth', block: block: 'start 'start' }));
-   ' }));
- const animated    const = animated = document.querySelector document.querySelectorAll('.All('.fadefade-up');
--up');
-    const    const observer = observer = new Inters new IntersectionObserverectionObserver((entries((entries) =>) => { entries { entries.forEach.forEach((entry => { ifentry => (entry { if.isInters (entryecting).isInters { entryecting).target.classList { entry.target.classList.add('.add('visible');visible'); observer.unobserve observer.unobserve((entryentry.target);.target); } } } }); },); }, { threshold { threshold: : 0.0.1 });
-    animated1 });
-    animated.forEach(el.forEach(el => observer => observer.ob.observe(elserve(el));
+    updateCountdown(); setInterval(updateCountdown, 1000);
+    document.getElementById('scrollArrow').addEventListener('click', () => document.getElementById('guests-section').scrollIntoView({ behavior: 'smooth', block: 'start' }));
 
-   ));
+    const animated = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+    animated.forEach(el => observer.observe(el));
 
-    const form = document const form = document.getElementById('.getElementById('presenceForm'),presenceForm'), msg = msg = document.getElementById document.getElementById('soon('soonMessage');
-Message');
-    if    if (form (form) {) { msg.style msg.style.display =.display = 'none 'none'; form'; form.addEventListener('.addEventListener('submit',submit', async function async function(e)(e) { e { e.preventDefault();.preventDefault(); if (! if (!document.getElementByIddocument.getElementById('full('fullname').name').value.trimvalue.trim()) {()) { alert(' alert('УкаУкажите имяжите имя'); return'); return; }; } const btn const btn = form = form.querySelector('..querySelector('.submit-btnsubmit-btn'); btn'); btn.textContent.textContent = ' = 'ОтОтправляем...правляем...';'; btn btn.disabled = true; try.disabled = true; try { const { const r = await fetch(form.action r = await fetch(form.action, {, { method:'POST', method:'POST', body: body:new FormData(formnew FormData(form), headers), headers:{':{'Accept':'application/jsonAccept':'application/json'} }'} }); if (r.ok)); if (r.ok) { form.style.display { form.style.display='='nonenone'; msg.style.display'; msg.style.display='block='block'; }'; } else throw else throw new Error new Error(); }(); } catch { catch { alert(' alert('ОшибОшибка.ка. Попроб Попробуйтеуйте ещё раз ещё раз.'); btn.text.'); btn.textContentContent='Отправи='Отправить';ть'; btn.dis btn.disabled=falseabled=false; }; } }); }); }
-}) }
+    const form = document.getElementById('presenceForm'), msg = document.getElementById('soonMessage');
+    if (form) { msg.style.display = 'none'; form.addEventListener('submit', async function(e) { e.preventDefault(); if (!document.getElementById('fullname').value.trim()) { alert('Укажите имя'); return; } const btn = form.querySelector('.submit-btn'); btn.textContent = 'Отправляем...'; btn.disabled = true; try { const r = await fetch(form.action, { method:'POST', body:new FormData(form), headers:{'Accept':'application/json'} }); if (r.ok) { form.style.display='none'; msg.style.display='block'; } else throw new Error(); } catch { alert('Ошибка. Попробуйте ещё раз.'); btn.textContent='Отправить'; btn.disabled=false; } }); }
 })();
-</();
 </script>
-script>
-</body</body>
-</>
+</body>
 </html>
-html>
